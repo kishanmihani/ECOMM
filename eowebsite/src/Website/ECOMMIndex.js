@@ -4,6 +4,10 @@ import logo from '../logo.svg';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+// import RandomIcon from '@@mui/icons-material/Random'; 
+import Home from '@mui/icons-material/Home';
+import Carousel from 'react-material-ui-carousel';
+import { Paper} from '@mui/material';
 export default function ECOMMIndex(props) {
     const [user,setuser] = useState([])
     
@@ -26,6 +30,16 @@ export default function ECOMMIndex(props) {
     console.log(user.products)
     console.log({user})
    }
+   var items = [
+    {
+        name: "Random Name #1",
+        description: "Probably the most random thing you have ever seen!"
+    },
+    {
+        name: "Random Name #2",
+        description: "Hello World!"
+    }
+]
   return (
     <div>
         <header id="header">
@@ -44,6 +58,44 @@ export default function ECOMMIndex(props) {
                 </ul>
             </div >
         </header>
+        <section>
+               <div>
+                 <Carousel
+                  fullHeightHover={false}     // We want the nav buttons wrapper to only be as big as the button element is
+                  navButtonsProps={{          // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
+                      style: {
+                          backgroundColor: 'cornflowerblue',
+                          borderRadius: 0
+                      }
+                  }} 
+                  navButtonsWrapperProps={{   // Move the buttons to the bottom. Unsetting top here to override default style.
+                      style: {
+                          bottom: '0',
+                          top: 'unset'
+                      }
+                  }} 
+                  NextIcon='next'             // Change the "inside" of the next button to "next"
+                  PrevIcon='prev'  
+                                   next={ (next, active) => console.log(`we left ${active}, and are now at ${next}`)  }
+                 prev={ (prev, active) => console.log(`we left ${active}, and are now at ${prev}`)  }
+                //  IndicatorIcon={<Plain/>}
+                 NavButton={({onClick, className, style, next, prev}) => {
+                    // Other logic
+            
+                    return (
+                        <Button onClick={onClick} className={className} style={style}>
+                            {next && ">"}
+                            {prev && "<"}
+                        </Button>
+                    )
+                }}
+                 >
+                {
+                    items.map((item,i)=> <Items key={i} item={item} />)
+                }
+                </Carousel>
+               </div>
+        </section>
         <section>
         <div id="heading-fetch">
                     <h1>LATEST PRODUCT</h1>
@@ -108,4 +160,17 @@ export default function ECOMMIndex(props) {
         </footer>
     </div>
   )
+}
+
+function Items(props){
+    return (
+            <Paper>
+                <h2>{props.item.name}</h2>
+                <p>{props.item.description}</p>
+
+                <Button className='CheckButton'>
+                    Check it Out
+                </Button>
+            </Paper>
+    )
 }
