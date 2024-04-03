@@ -1,0 +1,114 @@
+@import '@fontsource/roboto/400.css';
+#header
+{display: flex;
+    justify-content: space-between;
+    padding:1%  2%;
+    background-color: #f9ece6;
+}
+#headertab > ul{
+display: flex;
+justify-content: space-between;
+list-style-type:none;
+
+}
+
+#header-first{
+    width:10%;
+    height:30px;
+}
+
+#headertab{
+    width:70%;
+}
+
+#img-logo{
+    height:inherit;
+}
+
+#headertab li{
+    padding:6px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 10.5pt;
+    width:100px;
+}
+.Active{
+    background-color: white;
+    border-radius: 4px;
+    font-weight: 500 !important;
+}
+#footer{
+    background: #2d2d2d;
+}
+#card-product{
+    height: 270px;
+    width:20vw;
+    margin: 1rem;
+    margin-bottom: 0px;
+    border:1px solid gray;
+}
+#card-image{
+    width: calc(100% - 5px);
+    height: 240px;
+    margin: 6px auto 3px auto;
+}
+#card-image img{
+    width: inherit;
+    height: inherit;
+}
+#container{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+height: 88vh;
+overflow: hidden;
+}
+#card-text-contain{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px;
+    font-weight: 500;
+    font-size: 9pt;
+    letter-spacing: 1px;
+}
+#card-rate{
+    color:#db4f66;
+    font-weight: 500;
+}
+#heading-fetch{
+    margin: 1.5%;
+    font-size: larger;
+    letter-spacing: 2px;
+}
+#bottom-fetch{
+    margin: 1.5%;
+   
+    letter-spacing: 2px;
+}
+
+#footer-list{
+    display: flex   ;
+    justify-content: space-around;
+    color: white;
+    padding: 1rem;
+    letter-spacing: 0.7px;
+    text-align: justify;
+}
+#footer-list > li{
+    width:20.5vw;
+    list-style: none;
+}
+#About-footer, #Newletter-footer, #Needhelop-footer, #Contact-footer{
+    list-style: none;
+}
+.first-head-footer{
+    padding: 1rem 0px; 
+    
+}
+.first-head-footer > h4{
+    font-weight: 500;
+}
+
+#Newletter-footer .MuiFormControl-root{
+    background:white
+}
